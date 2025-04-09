@@ -32,5 +32,6 @@ namespace Liga_Pro.Repositories
             return(equipos);
 
         }
+
     }
 }
