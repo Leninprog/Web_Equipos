@@ -4,6 +4,11 @@ namespace Liga_Pro.Repositories
 {
     public class EquipoRepository
     {
+        public IEnumerable<Equipo> Equipos { get; set; }
+        public EquipoRepository()
+        {
+            Equipos = DevuelveListadoEquipos();
+        }
         public IEnumerable<Equipo> DevuelveListadoEquipos()
         {
             List<Equipo> equipos = new List<Equipo>();
@@ -33,5 +38,17 @@ namespace Liga_Pro.Repositories
 
         }
 
+        public Equipo DevuelveEquiposporId(int Id)
+        {
+            var equipo = Equipos.First(item => item.Id == Id);
+
+            return equipo;
+        }
+
+        public bool ActualizarEquipo(int Id, Equipo equipo)
+        {
+            //Actualizar los datos de los equipos.
+            return true;
+        }
     }
 }
