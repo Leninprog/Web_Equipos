@@ -22,7 +22,7 @@ namespace Liga_Pro.Models
         public int partidosEmpatados { get; set; }
         [Range(0, 100)]
         public int partidosPerdidos { get; set; }
-        
 
+        public int Puntos => (partidosGanados * 3) + (partidosEmpatados * 1);
     }
 }
