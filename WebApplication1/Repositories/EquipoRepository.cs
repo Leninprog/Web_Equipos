@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Text.Json;
+using System.Collections.Generic;
 using System.Linq;
 using Liga_Pro.Models;
 
@@ -6,37 +7,53 @@ namespace Liga_Pro.Repositories
 {
     public class EquipoRepository
     {
+        /* 
+        Ruta del archivo Json, se guardan ahi los datos de los equipos 
+        Se crea automanticamente una carpeta "Data" en la raiz del proyecto 
+        Nos ayudamos de chatgpt para realizar y guiarnos en los cambios respecto al archivo de Json.
+        El equipos.json se cambiaron propiedades:
+        Accion de compilacion: Contenido
+        Copiar en la direccion de salida: Copiar siempre.
+         */
+        private static string _archivoJson = Path.Combine(Directory.GetCurrentDirectory(), "Data", "equipos.json");
+        
         // Lista estática que actúa como "base de datos en memoria"
-        public static List<Equipo> Equipos = new List<Equipo>();
+        public static List<Equipo> Equipos;
 
+        //Constructor que carga los equipos desde el archivo.
         public EquipoRepository()
         {
-            // Solo inicializa una vez si la lista está vacía
-            if (Equipos.Count == 0)
+            if (Equipos == null || Equipos.Count == 0)
             {
-                Equipos.Add(new Equipo
-                {
-                    Id = 1,
-                    Nombre = "Liga de Quito",
-                    partidosJugados = 10,
-                    partidosGanados = 10,
-                    partidosEmpatados = 0,
-                    partidosPerdidos = 0
-                });
-
-                Equipos.Add(new Equipo
-                {
-                    Id = 2,
-                    Nombre = "Independiente del Valle",
-                    partidosJugados = 10,
-                    partidosGanados = 5,
-                    partidosEmpatados = 1,
-                    partidosPerdidos = 3
-                });
+                Equipos = CargarEquiposDesdeArchivo(); //Lee el archivo json
             }
         }
 
-        // Devuelve la lista actual de equipos (sin reinicializar)
+        //Carga los datos del archivo json si existen, sino devuelve una lista vacia
+        private List<Equipo> CargarEquiposDesdeArchivo()
+        {
+            if (!File.Exists(_archivoJson))
+            {
+                return new List<Equipo>();
+            }
+            // lee el contenido del archivo json
+            var json = File.ReadAllText(_archivoJson);
+            // Convierte el texto de json a objetos Equipo C# (Deserializar)
+            return JsonSerializer.Deserialize<List<Equipo>>(json) ?? new List<Equipo>();
+        }
+
+        /*
+        Guardaremos los datos actuales al json.
+        Llamar cada vez que se actualice los datos de los equipos. 
+        */
+        private void GuardarEquiposEnArchivo()
+        {
+            //Convierte objetos de C# a textos Json. (Serializar)
+            var json = JsonSerializer.Serialize(Equipos);
+            //Escribir el texto Json en el archivo
+            File.WriteAllText(_archivoJson, json);
+        }
+
         public IEnumerable<Equipo> DevuelveListadoEquipos()
         {
             return Equipos;
@@ -48,21 +65,24 @@ namespace Liga_Pro.Repositories
             return Equipos.FirstOrDefault(item => item.Id == Id);
         }
 
-        // Actualiza los datos del equipo encontrado por ID
+        // Actualiza los datos del equipo guardando en archivo de Json
         public bool ActualizarEquipo(int Id, Equipo equipo)
         {
-            var equipoExistente = Equipos.FirstOrDefault(item => item.Id == Id);
-            if (equipoExistente == null)
+            var existente = Equipos.FirstOrDefault(item => item.Id == Id);
+            if (existente == null)
             {
                 return false;
             }
 
-            equipoExistente.Nombre = equipo.Nombre;
-            equipoExistente.partidosJugados = equipo.partidosJugados;
-            equipoExistente.partidosGanados = equipo.partidosGanados;
-            equipoExistente.partidosEmpatados = equipo.partidosEmpatados;
-            equipoExistente.partidosPerdidos = equipo.partidosPerdidos;
+            //Actualizar los valores del equipo
+            existente.Nombre = equipo.Nombre;
+            existente.partidosJugados = equipo.partidosJugados;
+            existente.partidosGanados = equipo.partidosGanados;
+            existente.partidosEmpatados = equipo.partidosEmpatados;
+            existente.partidosPerdidos = equipo.partidosPerdidos;
 
+            //Guardamos en json.
+            GuardarEquiposEnArchivo();
             return true;
         }
     }
