@@ -1,0 +1,32 @@
+﻿@model Liga_Pro.Models.Equipo
+
+@{
+    ViewData["Title"] = "Detalles del equipo";
+}
+
+<h2>@Model.Nombre</h2>
+
+<div style="display: flex; align-items: center; gap: 20px; margin-top: 20px;">
+    <img src="~/imagenes/@Model.Imagen" alt="Escudo de @Model.Nombre" style="width:150px;" />
+    <p><strong>Descripción:</strong> @Model.Descripcion</p>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>Ganados</th>
+        <td>@Model.partidosGanados</td>
+    </tr>
+    <tr>
+        <th>Empatados</th>
+        <td>@Model.partidosEmpatados</td>
+    </tr>
+    <tr>
+        <th>Perdidos</th>
+        <td>@Model.partidosPerdidos</td>
+    </tr>
+    <tr>
+        <th>Puntos</th>
+        <td>@Model.Puntos</td>
+    </tr>
+</table>

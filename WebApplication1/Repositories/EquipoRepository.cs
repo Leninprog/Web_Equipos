@@ -68,7 +68,7 @@ namespace Liga_Pro.Repositories
         // Actualiza los datos del equipo guardando en archivo de Json
         public bool ActualizarEquipo(int Id, Equipo equipo)
         {
-            var existente = Equipos.FirstOrDefault(item => item.Id == Id);
+            var existente = Equipos.First(item => item.Id == Id);
             if (existente == null)
             {
                 return false;
@@ -85,6 +85,19 @@ namespace Liga_Pro.Repositories
             GuardarEquiposEnArchivo();
             return true;
         }
+
+        public bool EliminarEquipo(int Id)
+        {
+            var equipo = Equipos.FirstOrDefault(item => item.Id == Id);
+            if (equipo != null)
+            {
+                Equipos.Remove(equipo);
+                GuardarEquiposEnArchivo();
+                return true;
+            }
+            return false;
+        }
+
     }
 }
 

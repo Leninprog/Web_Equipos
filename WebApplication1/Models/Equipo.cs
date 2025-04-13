@@ -24,5 +24,11 @@ namespace Liga_Pro.Models
         public int partidosPerdidos { get; set; }
 
         public int Puntos => (partidosGanados * 3) + (partidosEmpatados * 1);
+
+        //Manejamos el escudo de cada equipo.
+        [DisplayName("Escudo del equipo")]
+        public string Imagen { get; set; }
+        public string Descripcion { get; set; }
+
     }
 }

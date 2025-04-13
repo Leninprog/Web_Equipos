@@ -1,0 +1,15 @@
+﻿@model Liga_Pro.Models.Equipo
+
+@{
+    ViewData["Title"] = "Eliminar Equipo";
+}
+
+<img src="~/imagenes/@Model.Imagen" alt="@Model.Nombre" style="width:150px;" />
+<h3>¿Estás seguro que deseas eliminar el equipo <strong>@Model.Nombre</strong>?</h3>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+    <a asp-action="List" class="btn btn-secondary">Cancelar</a>
+</form>
+

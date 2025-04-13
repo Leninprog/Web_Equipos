@@ -53,5 +53,29 @@ namespace Liga_Pro.Controllers
                 return View();
             }
         }
+
+        public ActionResult Details(int Id)
+        {
+            var equipo = _repository.DevuelveEquiposporId(Id);
+            if (equipo == null)
+            {
+                return NotFound();
+            }
+            return View(equipo);
+        }
+
+        public ActionResult Delete(int Id)
+        {
+            var equipo = _repository.DevuelveEquiposporId(Id);
+            return View(equipo);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int Id)
+        {
+            _repository.EliminarEquipo(Id);
+            return RedirectToAction(nameof(List));
+        }
+
     }
 }

@@ -6,60 +6,35 @@
 
 <h1>List</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<table class="table table-light">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.partidosJugados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.partidosGanados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.partidosEmpatados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.partidosPerdidos)
-            </th>
-            <th>
-                Puntos
-            </th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.partidosJugados)</th>
+            <th>@Html.DisplayNameFor(model => model.partidosGanados)</th>
+            <th>@Html.DisplayNameFor(model => model.partidosEmpatados)</th>
+            <th>@Html.DisplayNameFor(model => model.partidosPerdidos)</th>
+            <th>Puntos</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.partidosJugados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.partidosGanados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.partidosEmpatados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.partidosPerdidos)
-            </td>
-            <td>
-                @item.Puntos
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-success"}) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-secondary" }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */}, new { @class = "btn btn-danger" })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.partidosJugados)</td>
+                <td>@Html.DisplayFor(modelItem => item.partidosGanados)</td>
+                <td>@Html.DisplayFor(modelItem => item.partidosEmpatados)</td>
+                <td>@Html.DisplayFor(modelItem => item.partidosPerdidos)</td>
+                <td>@item.Puntos</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success btn-sm" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-outline-secondary btn-sm" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
