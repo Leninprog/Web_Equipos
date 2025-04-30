@@ -1,1 +1,101 @@
-[{"Id":1,"Nombre":"Liga de Quito","partidosJugados":12,"partidosGanados":11,"partidosEmpatados":1,"partidosPerdidos":0,"Puntos":34,"Imagen":"liga_.png","Descripcion":"Director Tecnico: Luis Zubeld\u00EDa. Fecha Creacion: 1930. Uno de los clubes m\u00E1s grandes del Ecuador, campe\u00F3n de la Copa Libertadores en 2008."},{"Id":2,"Nombre":"Independiente del Valle","partidosJugados":12,"partidosGanados":6,"partidosEmpatados":3,"partidosPerdidos":3,"Puntos":21,"Imagen":"independiente-del-valle-logo-0.png","Descripcion":"DirectorTecnico: Mart\u00EDn Anselmi. FechaCreacion: 1958. Club revelaci\u00F3n por su cantera y estilo de juego moderno."},{"Id":3,"Nombre":"Barcelona SC","partidosJugados":12,"partidosGanados":8,"partidosEmpatados":2,"partidosPerdidos":2,"Puntos":26,"Imagen":"barcelona.png","Descripcion":"DirectorTecnico: Segundo Castillo (Calle Pero Elegante). FechaCreacion: 1925. Club m\u00E1s popular de Ecuador con fuerte historia en cl\u00E1sicos del astillero."},{"Id":4,"Nombre":"Emelec","partidosJugados":12,"partidosGanados":5,"partidosEmpatados":4,"partidosPerdidos":3,"Puntos":19,"Imagen":"emelec.png","Descripcion":"DirectorTecnico: Miguel Rondelli. FechaCreacion: 1929. Rival de Barcelona SC, reconocido por su hinchada fiel."},{"Id":5,"Nombre":"El Nacional","partidosJugados":12,"partidosGanados":4,"partidosEmpatados":4,"partidosPerdidos":4,"Puntos":16,"Imagen":"elnacional.png","Descripcion":"DirectorTecnico: Ever Hugo Almeida, FechaCreacion: 1964, Club militar con tradici\u00F3n de jugar solo con ecuatorianos."},{"Id":6,"Nombre":"Delf\u00EDn SC","partidosJugados":12,"partidosGanados":6,"partidosEmpatados":3,"partidosPerdidos":3,"Puntos":21,"Imagen":"delfin.png","Descripcion":"DirectorTecnico: Guillermo Dur\u00F3, FechaCreacion: 1989, Equipo de Manta que ha tenido fuerte crecimiento en los \u00FAltimos a\u00F1os."},{"Id":7,"Nombre":"Universidad Cat\u00F3lica","partidosJugados":12,"partidosGanados":7,"partidosEmpatados":2,"partidosPerdidos":3,"Puntos":23,"Imagen":"catolica.png","Descripcion":"DirectorTecnico: Miguel Rondelli, FechaCreacion: 1963, Equipo acad\u00E9mico de Quito con estilo de juego t\u00E9cnico."},{"Id":9,"Nombre":"Orense SC","partidosJugados":12,"partidosGanados":2,"partidosEmpatados":5,"partidosPerdidos":5,"Puntos":11,"Imagen":"orense.png","Descripcion":"DirectorTecnico: Carlos Esp\u00EDnola, FechaCreacion: 2009, Equipo joven con base en Machala."},{"Id":10,"Nombre":"Mushuc Runa","partidosJugados":12,"partidosGanados":4,"partidosEmpatados":2,"partidosPerdidos":6,"Puntos":14,"Imagen":"mushuc_runa.png","Descripcion":"Equipo ind\u00EDgena de Tungurahua con una historia inspiradora. FechaCreacion: 2003. DirectorTecnico: Geovanny Cumbicus"}]
+[
+    {
+        "Id": 1,
+        "Nombre": "Liga de Quito",
+        "partidosJugados": 12,
+        "partidosGanados": 11,
+        "partidosEmpatados": 1,
+        "partidosPerdidos": 0,
+        "Puntos": 34,
+        "Imagen": "liga_.png",
+        "Descripcion": "Director Tecnico: Luis Zubeld\u00EDa. Fecha Creacion: 1930. Uno de los clubes m\u00E1s grandes del Ecuador, campe\u00F3n de la Copa Libertadores en 2008."
+    },
+    {
+        "Id": 2,
+        "Nombre": "Independiente del Valle",
+        "partidosJugados": 12,
+        "partidosGanados": 6,
+        "partidosEmpatados": 3,
+        "partidosPerdidos": 3,
+        "Puntos": 21,
+        "Imagen": "independiente-del-valle-logo-0.png",
+        "Descripcion": "DirectorTecnico: Mart\u00EDn Anselmi. FechaCreacion: 1958. Club revelaci\u00F3n por su cantera y estilo de juego moderno."
+    },
+    {
+        "Id": 3,
+        "Nombre": "Barcelona SC",
+        "partidosJugados": 12,
+        "partidosGanados": 8,
+        "partidosEmpatados": 2,
+        "partidosPerdidos": 2,
+        "Puntos": 26,
+        "Imagen": "barcelona.png",
+        "Descripcion": "DirectorTecnico: Segundo Castillo (Calle Pero Elegante). FechaCreacion: 1925. Club m\u00E1s popular de Ecuador con fuerte historia en cl\u00E1sicos del astillero."
+    },
+    {
+        "Id": 4,
+        "Nombre": "Emelec",
+        "partidosJugados": 12,
+        "partidosGanados": 5,
+        "partidosEmpatados": 4,
+        "partidosPerdidos": 3,
+        "Puntos": 19,
+        "Imagen": "emelec.png",
+        "Descripcion": "DirectorTecnico: Miguel Rondelli. FechaCreacion: 1929. Rival de Barcelona SC, reconocido por su hinchada fiel."
+    },
+    {
+        "Id": 5,
+        "Nombre": "El Nacional",
+        "partidosJugados": 12,
+        "partidosGanados": 4,
+        "partidosEmpatados": 4,
+        "partidosPerdidos": 4,
+        "Puntos": 16,
+        "Imagen": "elnacional.png",
+        "Descripcion": "DirectorTecnico: Ever Hugo Almeida, FechaCreacion: 1964, Club militar con tradici\u00F3n de jugar solo con ecuatorianos."
+    },
+    {
+        "Id": 6,
+        "Nombre": "Delf\u00EDn SC",
+        "partidosJugados": 12,
+        "partidosGanados": 6,
+        "partidosEmpatados": 3,
+        "partidosPerdidos": 3,
+        "Puntos": 21,
+        "Imagen": "delfin.png",
+        "Descripcion": "DirectorTecnico: Guillermo Dur\u00F3, FechaCreacion: 1989, Equipo de Manta que ha tenido fuerte crecimiento en los \u00FAltimos a\u00F1os."
+    },
+    {
+        "Id": 7,
+        "Nombre": "Universidad Cat\u00F3lica",
+        "partidosJugados": 12,
+        "partidosGanados": 7,
+        "partidosEmpatados": 2,
+        "partidosPerdidos": 3,
+        "Puntos": 23,
+        "Imagen": "catolica.png",
+        "Descripcion": "DirectorTecnico: Miguel Rondelli, FechaCreacion: 1963, Equipo acad\u00E9mico de Quito con estilo de juego t\u00E9cnico."
+    },
+    {
+        "Id": 9,
+        "Nombre": "Orense SC",
+        "partidosJugados": 12,
+        "partidosGanados": 2,
+        "partidosEmpatados": 5,
+        "partidosPerdidos": 5,
+        "Puntos": 11,
+        "Imagen": "orense.png",
+        "Descripcion": "DirectorTecnico: Carlos Esp\u00EDnola, FechaCreacion: 2009, Equipo joven con base en Machala."
+    },
+    {
+        "Id": 10,
+        "Nombre": "Mushuc Runa",
+        "partidosJugados": 12,
+        "partidosGanados": 4,
+        "partidosEmpatados": 2,
+        "partidosPerdidos": 6,
+        "Puntos": 14,
+        "Imagen": "mushuc_runa.png",
+        "Descripcion": "Equipo ind\u00EDgena de Tungurahua con una historia inspiradora. FechaCreacion: 2003. DirectorTecnico: Geovanny Cumbicus"
+    }
+]
