@@ -3,16 +3,17 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Liga_Pro.Models;
 using Liga_Pro.Repositories;
+using Liga_Pro.Data;
 
 namespace Liga_Pro.Controllers
 {
     public class EquipoController : Controller
     {
-        public EquipoRepository _repository;
+        private readonly EquipoRepository _repository;
 
-        public EquipoController()
+        public EquipoController(ApplicationDbContext context)
         {
-            _repository = new EquipoRepository();
+            _repository = new EquipoRepository(context);
         }
 
         public ActionResult View()
