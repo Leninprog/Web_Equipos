@@ -27,7 +27,8 @@ namespace Liga_Pro.Models
 
         //Manejamos el escudo de cada equipo.
         [DisplayName("Escudo del equipo")]
-        public string Imagen { get; set; }
+        public string Imagen { get; set; } = string.Empty;
+
         public string Descripcion { get; set; }
 
     }
